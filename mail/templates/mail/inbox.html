@@ -1,0 +1,27 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <section id="header" class="container-fluid">
+        <h2 class="d-block w-100 text-center pb-2" id="accountEmail">{{ request.user.email }}</h2>
+        <hr>
+        <div class="row">
+            <button class="mx-auto btn btn-sm btn-outline-primary" id="inbox">Inbox <i class="fa fa-bookmark"></i></button>
+            <button class="mx-auto btn btn-sm btn-outline-success" id="compose">Compose <i class="fa fa-pencil-square-o"></i></button>
+            <button class="mx-auto btn btn-sm btn-outline-light" id="sent">Sent <i class="fa fa-send-o"></i></button>
+            <button class="mx-auto btn btn-sm btn-outline-secondary" id="archived">Archived <i class="fa fa-archive"></i></button>
+            <a class="mx-auto btn btn-sm btn-outline-danger" href="{% url 'logout' %}">Log Out <i class="fa fa-sign-out"></i></a>
+        </div>
+    </section>
+
+    {% include "mail/views/composeView.html" %}
+    {% include "mail/views/archiveView.html" %}
+    {% include "mail/views/emailView.html" %}
+    {% include "mail/views/outboxView.html" %}
+    {% include "mail/views/inboxView.html" %}
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}

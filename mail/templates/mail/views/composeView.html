@@ -1,0 +1,44 @@
+<div id="compose-view" class="py-5 mail-box">
+    <h3 class="text-center text-white">New Email</h3>
+
+    <div class="container-fluid">
+        <form id="compose-form">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">From</label>
+                <div class="col-sm-9">
+                    <input disabled class="form-control" value="{{ request.user.email }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">To</label>
+                <div class="col-sm-9">
+                    <input id="compose-recipients" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Subject</label>
+                <div class="col-sm-9">
+                    <input class="form-control" id="compose-subject" placeholder="Subject">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 d-inline-flex justify-content-center">
+                    <input type="submit" class="btn btn-primary" value="Send"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    textarea {
+        height: 200px;
+    }
+    label {
+        color: #fff;
+    }
+</style>

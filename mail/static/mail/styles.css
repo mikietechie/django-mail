@@ -1,0 +1,12 @@
+#header {
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 16px;
+}
+#header h2 {
+    color: #fff;
+}
+#header .row {
+    border-top: 2px solid #fff;
+    padding-top: 8px;
+}
